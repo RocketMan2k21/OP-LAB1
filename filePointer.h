@@ -52,8 +52,8 @@ void p_checkFile(string filename){
 
 void p_findsimilarities(string filename) {
     FILE *myFile, *chFile;
-    myFile = fopen(filename.c_str(), "r"); // opening input file in read mode
-    chFile = fopen("output.txt", "w"); // opening output file in write mode
+    myFile = fopen(filename.c_str(), "r"); 
+    chFile = fopen("output.txt", "w"); 
     
     
     
@@ -95,24 +95,24 @@ void p_findsimilarities(string filename) {
 
 void p_finduppercase(string filename) {
     FILE *inputFile, *chFile;
-    inputFile = fopen("output.txt", "r"); // opening file in read mode
-    chFile = fopen(filename.c_str(), "w"); // opening file in write mode
+    inputFile = fopen("output.txt", "r"); 
+    chFile = fopen(filename.c_str(), "w"); 
     string line;
     int lineNumber = 1;
 
     char buffer[100]; // buffer to read each line
 
-    while (fgets(buffer, sizeof(buffer), inputFile)) { // reading file line by line
+    while (fgets(buffer, sizeof(buffer), inputFile)) { 
         line = buffer;
 
-        if (lineNumber % 2 == 1) { // checking if line number is odd
+        if (lineNumber % 2 == 1) { 
             string word = "";
             string newLine = "";
 
             for (int i = 0; i <= line.length(); i++) {
                 char c = line[i];
-                if (c == ' ' || c == '\0') { // finding words in the line
-                    if (!p_isUpperCase(word[0])) { // checking if word starts with uppercase letter
+                if (c == ' ' || c == '\0') { 
+                    if (!p_isUpperCase(word[0])) { 
                         newLine += " " + word;
                     }
                     word = "";
