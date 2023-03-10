@@ -145,7 +145,7 @@ void p_finduppercase(string filename) {
     remove("output.txt");
 }
 
-void p_findthebiggest(string filename){
+void p_findthebiggest(string filename){ //Пошук найбільшого рядка
     FILE* myFile = fopen(filename.c_str(), "r");
     char line[100];
     string prevLine = "";
@@ -156,7 +156,7 @@ void p_findthebiggest(string filename){
     
     while(fgets(line, sizeof(line), myFile)){
         currentLine = line;
-        if(currentLine.length() > prevLine.length()){
+        if(currentLine.length() > prevLine.length()){ //якщо зчитуваний рядок більше за попередній то він стає найбільшим
             length = currentLine.length();
             maxLineNumber = lineNumber;
             prevLine = currentLine;
